@@ -1,0 +1,58 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 24 d’oct. 2024, 16:52:04
+    Author     : angel
+*/
+
+* { box-sizing: border-box; }
+
+/* TAGS */
+body{
+    display: flex;
+    width: 50%;
+    border: solid 2px rgb(73, 73, 73);
+    box-shadow: 4px 6px 10px 8px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    align-items: center;
+
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #e0b667;
+    color: rgb(63, 63, 63);
+}
+
+h1 {
+    font-size: 1.2em;
+}
+
+    h1, h2, h3 {
+        font-weight: 900;
+        margin: 10px 0;
+    }
+
+input, button {
+    padding: 5px;
+    margin-bottom: 12px;
+    min-width: 100px;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+li button {
+    min-width: 0;
+    margin-right: 5px;
+}
+
+/* .CLASSES */
+.hide { display: none; }
+

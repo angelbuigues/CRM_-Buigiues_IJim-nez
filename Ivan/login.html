@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Iván Jiménez</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div id="user-container" class="box">
+            <label>Nombre de usuario: </label>
+            <input type="text" name="user" id="user">
+            <button id="siguiente">Siguiente</button>
+    </div>
+    <div id="password-container" class="box hidden">
+        <label>Contraseña: </label>
+        <input type="password" name="password" id="password">
+        <button id="iniciar-sesion">Iniciar Sesión</button>
+    </div>
+    <div id="welcome" class="box hidden">
+        <p id="texto-bienvenida"></p>
+        <button id="home-button" >¡Vamos al CRM!</button>
+    </div>
+    <script src="script/login.js"></script>
+</body>
+</html>

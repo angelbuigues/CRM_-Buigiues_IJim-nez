@@ -3,46 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/reset.css">
-    <link rel="stylesheet" href="style/style.css">
-    <title>ELPlaX</title>
+    <title>ElPlaX</title>
+    <link rel="stylesheet" href="style/login.css">
 </head>
 <body>
-    <div id="login-user">
-        <h1>LOGIN</h1>
-
-        <input type="text" id="username" placeholder="Nombre de usuario">
-        <button id="login-button-username">Siguiente</button>
+    <div id="user-container" class="box">
+            <label>Nombre de usuario: </label>
+            <input type="text" name="user" id="user">
+            <button id="siguiente">Siguiente</button>
     </div>
-    <div id="login-password" class="hide">
-        <h1>
-            -- CONTRASEÑA --
-        </h1>
-
-        <input type="password" id="password">
-        <button id="login-button-password">Entrar</button>
+    <div id="password-container" class="box hidden">
+        <label>Contraseña: </label>
+        <input type="password" name="password" id="password">
+        <button id="iniciar-sesion">Iniciar Sesión</button>
     </div>
-    <div id="login-result" class="hide"></div>
-
-    <div id="todo-list" class="hide">
-        <h1 id="welcome"></h1>
-
-        <div>
-            <label for="input-tarea-titulo">Título: </label>
-            <input type="text" id="input-tarea-titulo">
-        </div>
-
-        <div>
-            <label for="input-tarea-descripcion">Descripción: </label>
-            <input type="text" id="input-tarea-descripcion">
-        </div>
-
-        <button id="tarea-button-add">Añadir tarea</button>
-
-        <h3>Tareas:</h3>
-        <ul id="todo-list-tasks"></ul>
+    <div id="welcome" class="box hidden">
+        <p id="texto-bienvenida"></p>
+        <button id="home-button" >¡Vamos al CRM!</button>
     </div>
-
-    <script type="module" src="script/main.js"></script>
+    <script src="script/login.js"></script>
 </body>
 </html>

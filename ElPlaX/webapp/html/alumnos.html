@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creación de Alumnos</title>
-    <link rel="stylesheet" href="alumnos.css">
+    <link rel="stylesheet" href="../style/alumnos.css">
 </head>
 <body>
     <aside>
-        <button id="home-button" onclick="location.href='home.html'">Home</button>
-        <button id="alumn-button">Creación de Alumnos</button>
-        <button id="client-button">Creación de Empresas</button>
-        <button id="relation-button">Asignación/Eliminar Asignaciones</button>
-        <button id="information-button">Visualización de Asignaciones</button>
+        <a href="home.html" id="home-link">Home</a>
+        <a href="alumnos.html" id="alumn-link">Creación de Alumnos</a>
+        <a href="empresas.html" id="client-link">Creación de Empresas</a>
+        <a href="relaciones.html" id="relation-link">Relaciones</a>
+        <a href="informacion.html" id="information-link">Visualización de Asignaciones</a>
     </aside>
 
     <main>
@@ -42,11 +42,14 @@
             <label for="telefono">Teléfono:</label>
             <input type="tel" id="telefono" name="telefono" required>
 
-            <label for="vehiculo">Vehículo:</label>
-            <input type="checkbox" id="vehiculo" name="vehiculo">
+            <div class="checkbox-container">
+                <label for="vehiculo">Vehículo:</label>
+                <input type="checkbox" id="vehiculo" name="vehiculo">
+            </div>
 
             <button type="submit">Enviar</button>
         </form>
     </main>
 </body>
 </html>
+

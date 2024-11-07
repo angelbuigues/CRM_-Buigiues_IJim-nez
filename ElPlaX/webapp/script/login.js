@@ -1,6 +1,5 @@
-console.log("hola")
 document.addEventListener('DOMContentLoaded', function() {
-    
+
     //Creaciones de oyente para llamar a funciones
     let userButton = document.getElementById('siguiente')
     userButton.addEventListener('click', nextUser)
@@ -9,15 +8,23 @@ document.addEventListener('DOMContentLoaded', function() {
     passwordButton.addEventListener('click', nextPassword)
 
     document.getElementById("home-button").addEventListener("click", function() {
-        window.location.href = "./html/home.html";
+        window.location.href = "home.html";
     });
       
 })
 
 //Función para "cambiar de pantalla" al presionar un boton, escondemos el container de usuario y enseñamos para que introduzca contraseña
 function nextUser() {
-    document.getElementById('user-container').classList.add('hidden')
-    document.getElementById('password-container').classList.remove('hidden')
+
+    let userName1 = document.getElementById('user').value
+    
+    if (userName1 === null || userName1 === "" || userName1 === ' ') {
+        alert('Nombre de usuario es necesario')
+    } else {
+        document.getElementById('user-container').classList.add('hidden')
+        document.getElementById('password-container').classList.remove('hidden')
+    }
+    
 }
 
 //Función para "cambiar de pantalla" al presionar un boton, escondemos el container de introducción de contraseña y mostramos un mensaje de bienvenida

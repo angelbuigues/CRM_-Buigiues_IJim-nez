@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById("alumn-button").addEventListener("click", function() {
-        window.location.href = "../html/alumnos.html";
+        window.location.href = "alumnos.html";
     });
 
     document.getElementById("client-button").addEventListener("click", function() {
-        window.location.href = "../html/empresas.html";
+        window.location.href = "empresas.html";
     });
     
     document.getElementById("relation-button").addEventListener("click", function() {
-        window.location.href = "../html/relaciones.html";
+        window.location.href = "relaciones.html";
     });
 
     document.getElementById("information-button").addEventListener("click", function() {
-        window.location.href = "../html/informacion.html";
+        window.location.href = "informacion.html";
     });
       
 })

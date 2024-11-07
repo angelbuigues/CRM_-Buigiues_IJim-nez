@@ -1,26 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conexion a MySQL</title>
+    <title>Creación de Alumnos</title>
+    <link rel="stylesheet" href="alumnos.css">
 </head>
 <body>
-    <h1>Estudiantes desde la base de datos</h1>
-    <ul id="estudiantes"></ul>
+    <aside>
+        <button id="home-button" onclick="location.href='home.html'">Home</button>
+        <button id="alumn-button">Creación de Alumnos</button>
+        <button id="client-button">Creación de Empresas</button>
+        <button id="relation-button">Asignación/Eliminar Asignaciones</button>
+        <button id="information-button">Visualización de Asignaciones</button>
+    </aside>
 
-    <script>
-        fetch('http://localhost:3000/estudiantes')
-            .then(response => response.json())
-            .then(data => {
-                const estudiantesList = document.getElementById('estudiantes');
-                data.forEach(estudiante => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = `Nombre: ${estudiante.nombre}, Email: ${estudiante.email}`;
-                    estudiantesList.appendChild(listItem);
-                });
-            })
-            .catch(err => console.log('Error data', err));
-    </script>
+    <main>
+        <h2>Formulario de Creación de Alumnos</h2>
+        <form action="/server" method="POST">
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" required>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+
+            <label for="curso">Curso en el que se encuentra:</label>
+            <input type="text" id="curso" name="curso" required>
+
+            <label for="fecha">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <label for="direccion">Dirección del domicilio:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <label for="vehiculo">Vehículo:</label>
+            <input type="checkbox" id="vehiculo" name="vehiculo">
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
 </body>
 </html>

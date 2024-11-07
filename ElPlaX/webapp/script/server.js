@@ -8,10 +8,55 @@ const port = 3000;
 app.use(cors());
 app.use(express.json());
 
+// Ruta para obtener todos los estudiantes
 app.get('/estudiantes', (req, res) => {
     connection.query('SELECT * FROM estudiantes', (err, results) => {
         if (err) {
-            res.status(500).send('Error database');
+            res.status(500).send('Error en la base de datos');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+// Ruta para obtener todos los profesores
+app.get('/profesores', (req, res) => {
+    connection.query('SELECT * FROM profesores', (err, results) => {
+        if (err) {
+            res.status(500).send('Error en la base de datos');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+// Ruta para obtener todas las empresas
+app.get('/empresas', (req, res) => {
+    connection.query('SELECT * FROM empresas', (err, results) => {
+        if (err) {
+            res.status(500).send('Error en la base de datos');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+// Ruta para obtener todas las clases
+app.get('/clases', (req, res) => {
+    connection.query('SELECT * FROM clases', (err, results) => {
+        if (err) {
+            res.status(500).send('Error en la base de datos');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+// Ruta para obtener todas las asignaciones
+app.get('/asignaciones', (req, res) => {
+    connection.query('SELECT * FROM asignaciones', (err, results) => {
+        if (err) {
+            res.status(500).send('Error en la base de datos');
             return;
         }
         res.json(results);

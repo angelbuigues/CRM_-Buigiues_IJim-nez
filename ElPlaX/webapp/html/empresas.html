@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empresas</title>
+    <title>Conexion a MySQL</title>
 </head>
 <body>
-    
+    <h1>Empresas desde la base de datos</h1>
+    <ul id="empresas"></ul>
+
+    <script>
+        fetch('http://localhost:3000/empresas')
+            .then(response => response.json())
+            .then(data => {
+                const empresasList = document.getElementById('empresas');
+                data.forEach(empresa => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Nombre: ${empresa.nombre_empresa}, Email: ${empresa.email}`;
+                    empresasList.appendChild(listItem);
+                });
+            })
+            .catch(err => console.log('Error data', err));
+    </script>
 </body>
 </html>

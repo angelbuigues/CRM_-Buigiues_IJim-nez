@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexion a MySQL</title>
+</head>
+<body>
+    <h1>Estudiantes desde la base de datos</h1>
+    <ul id="estudiantes"></ul>
+
+    <script>
+        fetch('http://localhost:3000/estudiantes')
+            .then(response => response.json())
+            .then(data => {
+                const estudiantesList = document.getElementById('estudiantes');
+                data.forEach(estudiante => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Nombre: ${estudiante.nombre}, Email: ${estudiante.email}`;
+                    estudiantesList.appendChild(listItem);
+                });
+            })
+            .catch(err => console.log('Error data', err));
+    </script>
+</body>
+</html>

@@ -54,14 +54,16 @@ app.get('/clases', (req, res) => {
 
 // Ruta para obtener todas las asignaciones
 app.get('/asignaciones', (req, res) => {
-    connection.query('SELECT * FROM asignaciones', (err, results) => {
+    connection.query('SELECT id_asignacion, id_estudiante, (SELECT nombre FROM estudiantes WHERE estudiantes.id_estudiante = asignaciones.id_estudiante) AS nombre_estudiante, id_empresa, (SELECT nombre_empresa FROM empresas WHERE empresas.id_empresa = asignaciones.id_empresa) AS nombre_empresa, fecha_asignacion FROM asignaciones', (err, results) => {
         if (err) {
             res.status(500).send('Error en la base de datos');
             return;
         }
+        console.log(results); // Verifica la estructura en la consola del servidor
         res.json(results);
     });
 });
+
 
 app.listen(port, () => {
     console.log(`Servidor escuchando en el puerto ${port}`);

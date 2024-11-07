@@ -6,6 +6,53 @@
     <title>Información</title>
 </head>
 <body>
-    <p>hola</p>
+    <h1>Estudiantes desde la base de datos</h1>
+    <ul id="estudiantes"></ul>
+    <script>
+        fetch('http://localhost:3000/estudiantes')
+            .then(response => response.json())
+            .then(data => {
+                const estudiantesList = document.getElementById('estudiantes');
+                data.forEach(estudiante => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Nombre: ${estudiante.nombre}, Email: ${estudiante.email}`;
+                    estudiantesList.appendChild(listItem);
+                });
+            })
+            .catch(err => console.log('Error data', err));
+    </script>
+    <br><br>
+    <h1>Empresas desde la base de datos</h1>
+    <ul id="empresas"></ul>
+    <script>
+        fetch('http://localhost:3000/empresas')
+            .then(response => response.json())
+            .then(data => {
+                const empresasList = document.getElementById('empresas');
+                data.forEach(empresa => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Nombre: ${empresa.nombre_empresa}, Email: ${empresa.email}`;
+                    empresasList.appendChild(listItem);
+                });
+            })
+            .catch(err => console.log('Error data', err));
+    </script>
+    <br><br>
+    <h1>Asignaciones desde la base de datos</h1>
+    <ul id="asignaciones"></ul>
+    <script>
+        fetch('http://localhost:3000/asignaciones')
+            .then(response => response.json())
+            .then(data => {
+                console.log('data:', data); // Verifica los datos en la consola del navegador
+                const asignacionesList = document.getElementById('asignaciones');
+                data.forEach(asignacion => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `ID alumno: ${asignacion.id_estudiante}, Nombre alumno: ${asignacion.nombre_estudiante}, ID empresa: ${asignacion.id_empresa}, Nombre empresa: ${asignacion.nombre_empresa}`;
+                    asignacionesList.appendChild(listItem);
+                });
+            })
+            .catch(err => console.log('Error data', err));
+    </script>
 </body>
 </html>

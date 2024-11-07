@@ -1,26 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conexion a MySQL</title>
+    <title>Creación de Empresas</title>
+    <link rel="stylesheet" href="../style/empresas.css">
 </head>
 <body>
-    <h1>Empresas desde la base de datos</h1>
-    <ul id="empresas"></ul>
+    <aside>
+        <a href="home.html" id="home-link">Home</a>
+        <a href="alumnos.html" id="alumn-link">Creación de Alumnos</a>
+        <a href="empresas.html" id="client-link">Creación de Empresas</a>
+        <a href="relaciones.html" id="relation-link">Asignación/Eliminar Asignaciones</a>
+        <a href="informacion.html" id="information-link">Visualización de Asignaciones</a>
+    </aside>
 
-    <script>
-        fetch('http://localhost:3000/empresas')
-            .then(response => response.json())
-            .then(data => {
-                const empresasList = document.getElementById('empresas');
-                data.forEach(empresa => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = `Nombre: ${empresa.nombre_empresa}, Email: ${empresa.email}`;
-                    empresasList.appendChild(listItem);
-                });
-            })
-            .catch(err => console.log('Error data', err));
-    </script>
+    <main>
+        <h2>Formulario de Creación de Empresas</h2>
+        <form action="/server" method="POST">
+            <label for="dni">CIF:</label>
+            <input type="text" id="dni" name="dni" required>
+
+            <label for="nombre">Nombre de la empresa:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="direccion">Ubicación del centro de trabajo:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <label for="capacidad">Capacidad de Alumnos:</label>
+            <input type="text" id="capacidad" name="capacidad" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
 </body>
 </html>

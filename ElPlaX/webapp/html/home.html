@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Página de Inicio</title>
     <link rel="stylesheet" href="../style/home.css">
+    <script defer src="../script/home.js"></script>
 </head>
 <body>
-    <div id="option-container">
-        <h1>¿Qué quieres hacer?</h1>
-        <button id="alumn-button">Creacion Alumnos</button>
-        <button id="client-button">Creacion Clientes</button>
-        <button id="relation-button">Creacion Relaciones</button>
-        <button id="information-button">Consultar Información</button>
+    <div class="container">
+        <h2>¿Qué quieres hacer?</h2>
+        <div class="button-grid">
+            <button id="alumn-button">Creación de Alumnos</button>
+            <button id="client-button">Creación de Empresas</button>
+            <button id="relation-button">Asignación/Eliminar Asignaciones</button>
+            <button id="information-button">Visualización de Asignaciones</button>
+        </div>
     </div>
-    <script src="../script/home.js"></script>
 </body>
 </html>

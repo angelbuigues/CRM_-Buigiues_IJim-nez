@@ -56,11 +56,11 @@ function nextPassword() {
         if (listItem[i].nombre == userName) {
             if (listItem[i].contraseña == userPwd)
                 document.getElementById('password-container').classList.add('hidden')
-            document.getElementById('welcome').classList.remove('hidden')
-            document.getElementById('texto-bienvenida').innerText += '¡Bienvenido, ' + userName + '!'
-            userName = document.getElementById('user').value = ''
-            userPwd = document.getElementById('password').value = ''
-            comprovador = true;
+                document.getElementById('welcome').classList.remove('hidden')
+                document.getElementById('texto-bienvenida').innerText += '¡Bienvenido, ' + userName + '!'
+                userName = document.getElementById('user').value = ''
+                userPwd = document.getElementById('password').value = ''
+                comprovador = true;
         }
     }
 

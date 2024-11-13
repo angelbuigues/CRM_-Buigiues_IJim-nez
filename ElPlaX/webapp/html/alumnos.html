@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creación de Alumnos</title>
     <link rel="stylesheet" href="../style/alumnos.css">
+    <script defer src="../script/alumnos.js"></script>
 </head>
 <body>
     <aside>
@@ -31,7 +32,7 @@
             <input type="text" id="curso" name="curso" required>
 
             <label for="fecha">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha" name="fecha" required>
+            <input type="text" id="fecha" name="fecha" placeholder="YYYY/MM/DD" required>
 
             <label for="direccion">Dirección del domicilio:</label>
             <input type="text" id="direccion" name="direccion" required>
@@ -47,7 +48,7 @@
                 <input type="checkbox" id="vehiculo" name="vehiculo">
             </div>
 
-            <button type="submit">Enviar</button>
+            <button type="submit" id="enviarEstudianteButton">Enviar</button>
         </form>
     </main>
 </body>

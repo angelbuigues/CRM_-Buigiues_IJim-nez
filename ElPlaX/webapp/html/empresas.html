@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creación de Empresas</title>
     <link rel="stylesheet" href="../style/empresas.css">
+    <script defer src="../script/empresas.js"></script>
 </head>
+
 <body>
     <aside>
         <a href="home.html" id="home-link">Home</a>
@@ -19,7 +22,7 @@
         <h2>Formulario de Creación de Empresas</h2>
         <form action="/server" method="POST">
             <label for="dni">CIF:</label>
-            <input type="text" id="dni" name="dni" required>
+            <input type="text" id="cif" name="dni" required>
 
             <label for="nombre">Nombre de la empresa:</label>
             <input type="text" id="nombre" name="nombre" required>
@@ -36,8 +39,9 @@
             <label for="capacidad">Capacidad de Alumnos:</label>
             <input type="text" id="capacidad" name="capacidad" required>
 
-            <button type="submit">Enviar</button>
+            <button type="submit" id="enviarButton">Enviar</button>
         </form>
     </main>
 </body>
+
 </html>

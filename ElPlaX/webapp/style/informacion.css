@@ -43,56 +43,52 @@ aside a:hover {
 main {
     flex: 1;
     padding: 20px;
-    margin-left: 220px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-left: 220px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    justify-items: center;
 }
 
 h2 {
     text-align: center;
+    grid-column: span 2;
     margin-bottom: 20px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.data-container {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px; /* Reducción del ancho máximo */
+    padding: 15px; /* Ajuste de padding */
+    margin: 10px 0; /* Mayor espacio entre cajas */
     border: solid 2px rgb(73, 73, 73);
-    padding: 20px;
     border-radius: 8px;
     background-color: white;
     box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-label {
+#relaciones-container {
+    grid-column: span 2;
+}
+
+.data-container h3 {
+    text-align: center;
+    margin-bottom: 10px;
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"] {
-    padding: 8px;
-    border: 1px solid rgb(150, 150, 150);
-    border-radius: 5px;
+ul {
+    list-style-type: none;
+    padding: 0;
+    color: rgb(63, 63, 63);
 }
 
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+li {
+    padding: 5px 0;
+    border-bottom: 1px solid rgb(200, 200, 200);
 }
 
-button[type="submit"] {
-    background-color: lightcoral;
-    color: white;
-    font-weight: bold;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    align-self: center;
+li:last-child {
+    border-bottom: none;
 }

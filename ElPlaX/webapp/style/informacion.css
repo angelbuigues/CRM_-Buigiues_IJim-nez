@@ -44,32 +44,35 @@ main {
     flex: 1;
     padding: 20px;
     margin-left: 220px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 20px;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h2 {
     text-align: center;
-    grid-column: span 2;
+    width: 100%;
     margin-bottom: 20px;
+}
+
+.data-container-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 900px;
 }
 
 .data-container {
     width: 100%;
-    max-width: 300px; /* Reducción del ancho máximo */
-    padding: 15px; /* Ajuste de padding */
-    margin: 10px 0; /* Mayor espacio entre cajas */
+    max-width: 300px;
+    padding: 15px;
+    margin: 10px;
     border: solid 2px rgb(73, 73, 73);
     border-radius: 8px;
     background-color: white;
     box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-#relaciones-container {
-    grid-column: span 2;
 }
 
 .data-container h3 {

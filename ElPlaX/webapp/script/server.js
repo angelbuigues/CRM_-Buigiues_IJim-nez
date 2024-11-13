@@ -27,6 +27,7 @@ app.get('/profesores', (req, res) => {
             return;
         }
         res.json(results);
+        
     });
 });
 
@@ -59,9 +60,11 @@ app.get('/asignaciones', (req, res) => {
             res.status(500).send('Error en la base de datos');
             return;
         }
+        console.log(results); // Verifica la estructura en la consola del servidor
         res.json(results);
     });
 });
+
 
 app.listen(port, () => {
     console.log(`Servidor escuchando en el puerto ${port}`);

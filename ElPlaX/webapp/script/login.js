@@ -70,7 +70,7 @@ function nextPassword() {
 
     if (!comprovador) {
         // Mostrar alerta de error con un ejemplo de credenciales y resetear campos
-        alert("Usuario o contraseña incorrectos. Prueba con usuario: " + listItem[0].nombre + ", y contraseña: " + listItem[0].contrasena);
+        alert("Usuario o contraseña incorrectos.");
         document.getElementById('user').value = '';
         document.getElementById('password').value = '';
         document.getElementById('password-container').classList.add('hidden');

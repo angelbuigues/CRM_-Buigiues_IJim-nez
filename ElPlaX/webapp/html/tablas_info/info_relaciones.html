@@ -1,11 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información de Relaciones</title>
+    <title>Datos de la Base de Datos</title>
+    <script defer src="../../script/requests/relaciones_request.js"></script>
+    <link rel="stylesheet" href="../../style/info_relaciones.css">
 </head>
 <body>
-    
+    <aside>
+        <a href="../home.html" id="home-link">Home</a>
+        <a href="../alumnos.html" id="alumn-link">Creación de Alumnos</a>
+        <a href="../empresas.html" id="client-link">Creación de Empresas</a>
+        <a href="../relaciones.html" id="relation-link">Crear Asignaciones</a>
+        <a href="../informacion.html" id="information-link">Consultar Base de Datos</a>
+    </aside>
+
+    <main>
+        <h1>Datos de la Base de Datos</h1>
+
+        <!-- Contenedor de la tabla -->
+        <section id="data-table">
+            <!-- Encabezados -->
+            <ul class="table-header">
+                <li>Alumno</li>
+                <li>Empresa</li>
+            </ul>
+
+            <!-- Fila de ejemplo (para rellenar dinámicamente) -->
+            <ul class="table-row">
+                <li>Jose</li>
+                <li>MediaMarkt</li>
+            </ul>
+
+            <!-- Más filas dinámicas aquí -->
+            <ul class="table-row">
+                <li>Daniel</li>
+                <li>PedroAndTheOthers</li>
+            </ul>
+
+        </section>
+    </main>
 </body>
 </html>

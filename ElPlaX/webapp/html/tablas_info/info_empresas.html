@@ -1,11 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información de Empresas</title>
+    <title>Datos de la Base de Datos</title>
+    <script defer src="../../script/requests/empresas_request.js"></script>
+    <link rel="stylesheet" href="../../style/info_empresas.css">
 </head>
 <body>
-    
+    <aside>
+        <a href="../home.html" id="home-link">Home</a>
+        <a href="../alumnos.html" id="alumn-link">Creación de Alumnos</a>
+        <a href="../empresas.html" id="client-link">Creación de Empresas</a>
+        <a href="../relaciones.html" id="relation-link">Crear Asignaciones</a>
+        <a href="../informacion.html" id="information-link">Consultar Base de Datos</a>
+    </aside>
+
+    <main>
+        <h1>Datos de la Base de Datos</h1>
+
+        <!-- Contenedor de la tabla -->
+        <section id="data-table">
+            <!-- Encabezados -->
+            <ul class="table-header">
+                <li>CIF</li>
+                <li>Nombre</li>
+                <li>Teléfono</li>
+                <li>Email</li>
+                <li>Ubicacion</li>
+                <li>Capacidad</li>
+            </ul>
+
+            <!-- Fila de ejemplo (para rellenar dinámicamente) -->
+            <ul class="table-row">
+                <li>B5656565</li>
+                <li>Mercadona</li>
+                <li>600123456</li>
+                <li>mercadona@example.com</li>
+                <li>Micasa</li>
+                <li>3</li>
+            </ul>
+
+            <!-- Más filas dinámicas aquí -->
+
+        </section>
+    </main>
 </body>
 </html>

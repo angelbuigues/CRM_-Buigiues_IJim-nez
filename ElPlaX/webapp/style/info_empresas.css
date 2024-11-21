@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    margin: 5% auto;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(63, 63, 63);
+    background-color: antiquewhite;
+}
+
+aside {
+    width: 200px;
+    height: 100vh;
+    padding: 20px 0;
+    background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 2px solid rgb(73, 73, 73);
+}
+
+aside a {
+    color: black;
+    text-decoration: none;
+    background-color: lightcoral;
+    padding: 10px;
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+aside a:hover {
+    background-color: rgb(220, 100, 100);
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de la tabla */
+#data-table {
+    width: 100%;
+    max-width: 800px;
+    border: solid 2px rgb(73, 73, 73);
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Estilo para encabezados */
+.table-header {
+    display: flex;
+    background-color: lightcoral;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+.table-header li {
+    flex: 1;
+    padding: 5px;
+    border-right: 1px solid black;
+}
+
+.table-header li:last-child {
+    border-right: none;
+}
+
+/* Estilo para filas */
+.table-row {
+    display: flex;
+    padding: 10px;
+    text-align: center;
+}
+
+.table-row li {
+    flex: 1;
+    padding: 5px;
+    border-right: 1px solid rgb(200, 200, 200);
+}
+
+.table-row li:last-child {
+    border-right: none;
+}
+
+.table-row:nth-child(even) {
+    background-color: rgb(245, 245, 245);
+}
+
+.table-row:nth-child(odd) {
+    background-color: white;
+}

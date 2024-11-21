@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos de la Base de Datos</title>
-    <link rel="stylesheet" href="datos.css">
+    <script defer src="../../script/requests/alumnos_request.js"></script>
+    <link rel="stylesheet" href="../../style/info_alumnos.css">
 </head>
 <body>
     <aside>
@@ -18,32 +19,71 @@
     <main>
         <h1>Datos de la Base de Datos</h1>
 
-        <section id="data-container">
-            <h2>Datos Registrados</h2>
+        <!-- Contenedor de la tabla -->
+        <section id="data-table">
+            <!-- Encabezados -->
+            <ul class="table-header">
+                <li>DNI</li>
+                <li>Nombre</li>
+                <li>Apellido</li>
+                <li>Curso</li>
+                <li>Fecha de Nacimiento</li>
+                <li>Dirección</li>
+                <li>Email</li>
+                <li>Teléfono</li>
+                <li>Vehículo</li>
+            </ul>
 
-            <!-- Contenedor de alumnos -->
-            <div class="data-section" id="alumnos-section">
-                <h3>Alumnos</h3>
-                <ul id="alumnos-list">
-                    <!-- Aquí se añadirá dinámicamente cada alumno como <li> -->
-                </ul>
-            </div>
+            <!-- Fila de ejemplo (para rellenar dinámicamente) -->
+            <ul class="table-row">
+                <li>12345678A</li>
+                <li>Juan</li>
+                <li>Pérez</li>
+                <li>2º Bachillerato</li>
+                <li>15/05/2005</li>
+                <li>Calle Ejemplo, 123</li>
+                <li>juan.perez@example.com</li>
+                <li>600123456</li>
+                <li>🚗</li>
+            </ul>
 
-            <!-- Contenedor de empresas -->
-            <div class="data-section" id="empresas-section">
-                <h3>Empresas</h3>
-                <ul id="empresas-list">
-                    <!-- Aquí se añadirá dinámicamente cada empresa como <li> -->
-                </ul>
-            </div>
+            <!-- Más filas dinámicas aquí -->
+            <ul class="table-row">
+                <li>12345678A</li>
+                <li>Juan</li>
+                <li>Pérez</li>
+                <li>2º Bachillerato</li>
+                <li>15/05/2005</li>
+                <li>Calle Ejemplo, 123</li>
+                <li>juan.perez@example.com</li>
+                <li>600123456</li>
+                <li>🚗</li>
+            </ul>
 
-            <!-- Contenedor de relaciones -->
-            <div class="data-section" id="relaciones-section">
-                <h3>Relaciones</h3>
-                <ul id="relaciones-list">
-                    <!-- Aquí se añadirá dinámicamente cada relación como <li> -->
-                </ul>
-            </div>
+            <ul class="table-row">
+                <li>12345678A</li>
+                <li>Juan</li>
+                <li>Pérez</li>
+                <li>2º Bachillerato</li>
+                <li>15/05/2005</li>
+                <li>Calle Ejemplo, 123</li>
+                <li>juan.perez@example.com</li>
+                <li>600123456</li>
+                <li>🚗</li>
+            </ul>
+
+            <ul class="table-row">
+                <li>12345678A</li>
+                <li>Juan</li>
+                <li>Pérez</li>
+                <li>2º Bachillerato</li>
+                <li>15/05/2005</li>
+                <li>Calle Ejemplo, 123</li>
+                <li>juan.perez@example.com</li>
+                <li>600123456</li>
+                <li>🚗</li>
+            </ul>
+
         </section>
     </main>
 </body>

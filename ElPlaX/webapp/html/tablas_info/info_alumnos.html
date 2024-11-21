@@ -1,11 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información de Alumnos</title>
+    <title>Datos de la Base de Datos</title>
+    <link rel="stylesheet" href="datos.css">
 </head>
 <body>
-    
+    <aside>
+        <a href="../home.html" id="home-link">Home</a>
+        <a href="../alumnos.html" id="alumn-link">Creación de Alumnos</a>
+        <a href="../empresas.html" id="client-link">Creación de Empresas</a>
+        <a href="../relaciones.html" id="relation-link">Crear Asignaciones</a>
+        <a href="../informacion.html" id="information-link">Consultar Base de Datos</a>
+    </aside>
+
+    <main>
+        <h1>Datos de la Base de Datos</h1>
+
+        <section id="data-container">
+            <h2>Datos Registrados</h2>
+
+            <!-- Contenedor de alumnos -->
+            <div class="data-section" id="alumnos-section">
+                <h3>Alumnos</h3>
+                <ul id="alumnos-list">
+                    <!-- Aquí se añadirá dinámicamente cada alumno como <li> -->
+                </ul>
+            </div>
+
+            <!-- Contenedor de empresas -->
+            <div class="data-section" id="empresas-section">
+                <h3>Empresas</h3>
+                <ul id="empresas-list">
+                    <!-- Aquí se añadirá dinámicamente cada empresa como <li> -->
+                </ul>
+            </div>
+
+            <!-- Contenedor de relaciones -->
+            <div class="data-section" id="relaciones-section">
+                <h3>Relaciones</h3>
+                <ul id="relaciones-list">
+                    <!-- Aquí se añadirá dinámicamente cada relación como <li> -->
+                </ul>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

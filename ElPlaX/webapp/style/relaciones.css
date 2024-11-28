@@ -2,17 +2,17 @@
     box-sizing: border-box;
 }
 
+/* Estilo general */
 body {
-    display: flex;
-    margin: 5% auto;
+    margin: 0;
     font-family: 'Courier New', Courier, monospace;
-    color: rgb(63, 63, 63);
     background-color: antiquewhite;
+    color: rgb(63, 63, 63);
 }
 
 /* Botón Log Off */
 .logoff-container {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 10px;
 }
@@ -30,8 +30,10 @@ body {
 
 .logoff-button:hover {
     background-color: rgb(220, 100, 100);
+    color: white;
 }
 
+/* Aside */
 aside {
     width: 200px;
     height: 100vh;
@@ -62,38 +64,55 @@ aside a:hover {
     background-color: rgb(220, 100, 100);
 }
 
+/* Main content */
 main {
-    flex: 1;
-    padding: 20px;
     margin-left: 220px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-h1 {
-    text-align: center;
-    font-size: 24px;
+main h1 {
     margin-bottom: 20px;
 }
 
-#image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px; /* Reducción del padding */
-    width: 500px; /* Ancho más pequeño */
-    height: 500px; /* Alto más pequeño */
-    border: solid 2px rgb(73, 73, 73);
-    border-radius: 8px;
+/* Formulario */
+#assign-form-container {
+    width: 100%;
+    max-width: 600px;
     background-color: white;
-    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid rgb(73, 73, 73);
+    border-radius: 8px;
+    box-shadow: 4px 6px 10px 8px rgba(0, 0, 0, 0.2);
 }
 
-#relation-image {
-    max-width: 100%; /* Se ajusta al tamaño del contenedor */
-    height: auto;
-    border-radius: 4px; /* Borde redondeado más pequeño */
+#assign-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select, input[type="text"], button {
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid rgb(73, 73, 73);
+    border-radius: 8px;
+}
+
+button {
+    background-color: lightcoral;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(220, 100, 100);
 }

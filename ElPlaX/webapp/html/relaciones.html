@@ -1,27 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relaciones</title>
+    <title>Asignar Alumnos a Empresas</title>
     <link rel="stylesheet" href="../style/relaciones.css">
+    <script defer src="../../script/requests/relaciones_request.js"></script>
 </head>
 <body>
-    <aside>
-        <a href="home.html" id="home-link">Home</a>
-        <a href="alumnos.html" id="alumn-link">Creación de Alumnos</a>
-        <a href="empresas.html" id="client-link">Creación de Empresas</a>
-        <a href="relaciones.html" id="relation-link">Crear Asignaciones</a>
-        <a href="informacion.html" id="information-link">Consultar Base de Datos</a>
-    </aside>
+    <!-- Botón de Log Off -->
     <div class="logoff-container">
-        <a href="./../index.html" class="logoff-button">Cerrar Sesión</a>
+        <a href="../index.html" class="logoff-button">Cerrar Sesión</a>
     </div>
+
+    <aside>
+        <a href="./home.html" id="home-link">Home</a>
+        <a href="./alumnos.html" id="alumn-link">Creación de Alumnos</a>
+        <a href="./empresas.html" id="client-link">Creación de Empresas</a>
+        <a href="./relaciones.html" id="relation-link">Crear Asignaciones</a>
+        <a href="./informacion.html" id="information-link">Consultar Base de Datos</a>
+    </aside>
+
     <main>
-        <h1>En proceso</h1>
-        <div id="image-container">
-            <img src="../src/sorry.jpg" alt="Under Construction" id="relation-image">
-        </div>
+        <h1>Asignación</h1>
+        <section id="assign-form-container">
+            <form id="assign-form">
+                <label for="student-select">Seleccionar Alumno:</label>
+                <select id="student-select" name="student">
+                    <option value="" disabled selected>--Selecciona un alumno--</option>
+                    <!-- Opciones dinámicas -->
+                </select>
+
+                <label for="company-select">Seleccionar Empresa:</label>
+                <select id="company-select" name="company">
+                    <option value="" disabled selected>--Selecciona una empresa--</option>
+                    <!-- Opciones dinámicas -->
+                </select>
+
+                <label for="start-date">Fecha de inicio:</label>
+                <input type="text" id="start-date" name="starting_date" placeholder="YYYY/MM/DD" required>
+
+                <button type="submit" id="assign-button">Asignar</button>
+            </form>
+        </section>
     </main>
 </body>
 </html>

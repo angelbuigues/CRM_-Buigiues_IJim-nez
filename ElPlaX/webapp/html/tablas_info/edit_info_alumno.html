@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creación de Alumnos</title>
+    <link rel="stylesheet" href="../../style/alumnos.css">
+    <script defer src="../../script/editar_alumno.js"></script>
+</head>
+<body>
+    <aside>
+        <a href="home.html" id="home-link">Home</a>
+        <a href="alumnos.html" id="alumn-link">Creación de Alumnos</a>
+        <a href="empresas.html" id="client-link">Creación de Empresas</a>
+        <a href="relaciones.html" id="relation-link">Crear Asignaciones</a>
+        <a href="informacion.html" id="information-link">Consultar Base de Datos</a>
+    </aside>
+
+    <main>
+        <h2>Formulario de Creación de Alumnos</h2>
+        <form action="/server" method="POST">
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" required>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+
+            <label for="curso">Curso en el que se encuentra:</label>
+            <input type="text" id="curso" name="curso" required>
+
+            <label for="fecha">Fecha de Nacimiento:</label>
+            <input type="text" id="fecha" name="fecha" placeholder="YYYY/MM/DD" required>
+
+            <label for="direccion">Dirección del domicilio:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <div class="checkbox-container">
+                <label for="vehiculo">Vehículo:</label>
+                <input type="checkbox" id="vehiculo" name="vehiculo">
+            </div>
+
+            <button type="submit" id="enviarEstudianteButton">Editar</button>
+        </form>
+    </main>
+</body>
+</html>
+

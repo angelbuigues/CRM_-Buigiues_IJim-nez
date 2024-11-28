@@ -17,73 +17,29 @@
     </aside>
 
     <main>
-        <h1>Datos de la Base de Datos</h1>
+        <h1>Datos de los estudiantes</h1>
 
-        <!-- Contenedor de la tabla -->
-        <section id="data-table">
-            <!-- Encabezados -->
-            <ul class="table-header">
-                <li>DNI</li>
-                <li>Nombre</li>
-                <li>Apellido</li>
-                <li>Curso</li>
-                <li>Fecha de Nacimiento</li>
-                <li>Dirección</li>
-                <li>Email</li>
-                <li>Teléfono</li>
-                <li>Vehículo</li>
-            </ul>
-
-            <!-- Fila de ejemplo (para rellenar dinámicamente) -->
-            <ul class="table-row">
-                <li>12345678A</li>
-                <li>Juan</li>
-                <li>Pérez</li>
-                <li>2º Bachillerato</li>
-                <li>15/05/2005</li>
-                <li>Calle Ejemplo, 123</li>
-                <li>juan.perez@example.com</li>
-                <li>600123456</li>
-                <li>🚗</li>
-            </ul>
-
-            <!-- Más filas dinámicas aquí -->
-            <ul class="table-row">
-                <li>12345678A</li>
-                <li>Juan</li>
-                <li>Pérez</li>
-                <li>2º Bachillerato</li>
-                <li>15/05/2005</li>
-                <li>Calle Ejemplo, 123</li>
-                <li>juan.perez@example.com</li>
-                <li>600123456</li>
-                <li>🚗</li>
-            </ul>
-
-            <ul class="table-row">
-                <li>12345678A</li>
-                <li>Juan</li>
-                <li>Pérez</li>
-                <li>2º Bachillerato</li>
-                <li>15/05/2005</li>
-                <li>Calle Ejemplo, 123</li>
-                <li>juan.perez@example.com</li>
-                <li>600123456</li>
-                <li>🚗</li>
-            </ul>
-
-            <ul class="table-row">
-                <li>12345678A</li>
-                <li>Juan</li>
-                <li>Pérez</li>
-                <li>2º Bachillerato</li>
-                <li>15/05/2005</li>
-                <li>Calle Ejemplo, 123</li>
-                <li>juan.perez@example.com</li>
-                <li>600123456</li>
-                <li>🚗</li>
-            </ul>
-
+        <!-- Tabla dinámica -->
+        <section>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>DNI</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Curso</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Dirección</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Vehículo</th>
+                        <th>Modificar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filas dinámicas generadas aquí -->
+                </tbody>
+            </table>
         </section>
     </main>
 </body>

@@ -4,7 +4,7 @@
 
 body {
     display: flex;
-    margin: 5% auto;
+    margin: 0;
     font-family: 'Courier New', Courier, monospace;
     color: rgb(63, 63, 63);
     background-color: antiquewhite;
@@ -43,7 +43,7 @@ aside a:hover {
 main {
     flex: 1;
     padding: 20px;
-    margin-left: 150px;
+    margin-left: 200px; /* Ajustado para alinearse correctamente con el aside */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,58 +56,66 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Contenedor de la tabla */
+/* Tabla dinámica */
 #data-table {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
+    border-collapse: collapse;
     border: solid 2px rgb(73, 73, 73);
     border-radius: 8px;
     background-color: white;
     box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    margin-top: 20px;
 }
 
-/* Estilo para encabezados */
-.table-header {
-    display: flex;
+#data-table th, #data-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+#data-table th {
     background-color: lightcoral;
     color: black;
     font-weight: bold;
-    padding: 10px;
-    text-align: center;
 }
 
-.table-header li {
-    flex: 1;
-    padding: 5px;
-    border-right: 1px solid black;
-}
-
-.table-header li:last-child {
-    border-right: none;
-}
-
-/* Estilo para filas */
-.table-row {
-    display: flex;
-    padding: 10px;
-    text-align: center;
-}
-
-.table-row li {
-    flex: 1;
-    padding: 5px;
-    border-right: 1px solid rgb(200, 200, 200);
-}
-
-.table-row li:last-child {
-    border-right: none;
-}
-
-.table-row:nth-child(even) {
+#data-table tr:nth-child(even) {
     background-color: rgb(245, 245, 245);
 }
 
-.table-row:nth-child(odd) {
+#data-table tr:nth-child(odd) {
     background-color: white;
+}
+
+#data-table tr:hover {
+    background-color: rgb(220, 220, 220);
+}
+
+/* Responsividad para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    aside {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        position: static;
+        border-right: none;
+        border-bottom: 2px solid rgb(73, 73, 73);
+    }
+
+    main {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    #data-table {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    #data-table th, #data-table td {
+        padding: 8px;
+    }
 }

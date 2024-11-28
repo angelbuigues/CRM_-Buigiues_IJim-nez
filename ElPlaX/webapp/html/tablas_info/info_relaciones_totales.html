@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos de la Base de Datos</title>
-    <script defer src="../../script/requests/empresas_request.js"></script>
+    <script defer src="../../script/requests/relaciones_request_totales.js"></script>
     <link rel="stylesheet" href="../../style/info_alumnos.css">
 </head>
 <body>
@@ -17,9 +17,29 @@
     </aside>
 
     <main>
-        <h1>Datos de las empresas</h1>
+        <h1>Alumno y empresa informacion completa</h1>
         <!-- Tabla dinámica -->
         <section>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>DNI</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Curso</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Dirección</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Vehículo</th>
+                    </tr>
+                </thead>
+                <tbody id="alumnos-tbody">
+                    <!-- Filas dinámicas generadas aquí -->
+                </tbody>
+            </table>
+            <br>
+            <br>
             <table id="data-table">
                 <thead>
                     <tr>
@@ -31,11 +51,12 @@
                         <th>Capacidad</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="empresas-tbody">
                     <!-- Filas dinámicas generadas aquí -->
                 </tbody>
             </table>
         </section>
+        <button id="volver">Volver</button>
     </main>
 </body>
 </html>

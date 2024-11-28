@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 eliminarButton.textContent = '🗑️';
                 eliminarButton.addEventListener('click', () => {
                     if (confirm(`¿Seguro que deseas eliminar a ${estudiante.nombre}?`)) {
-                        fetch(`${apiUrl}/(${estudiante.id_estudiante},${estudiante.dni})`, {
+                        fetch(`${apiUrl}/${estudiante.id_estudiante}`, {
                             method: 'DELETE',
                         })
                             .then(() => {

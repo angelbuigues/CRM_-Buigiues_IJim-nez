@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const apiUrl = 'http://localhost:3000/estudiantes';
     const idEstudiante = localStorage.getItem('idEstudiante');
+    const xd = "xd";
 
     if (!idEstudiante) {
         alert('No se ha seleccionado un estudiante para editar.');
@@ -9,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Obtener los datos del estudiante
-    fetch(`${apiUrl}/${idEstudiante}`)
+    fetch(`${apiUrl}/${idEstudiante}_${xd}`)
         .then(response => response.json())
         .then(estudiante => {
             document.getElementById('dni').value = estudiante.dni;

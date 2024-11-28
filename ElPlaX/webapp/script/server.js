@@ -107,7 +107,7 @@ app.post('/insertarEmpresas', (req, res) => {
 });
 
 // Ruta para eliminar un estudiante por ID
-app.delete('/estudiantes/(:id, :dni)', (req, res) => {
+app.delete('/estudiantes/:id', (req, res) => {
     const { id } = req.params;
 
     const query = 'DELETE FROM estudiantes WHERE id_estudiante = ?';
@@ -127,7 +127,7 @@ app.delete('/estudiantes/(:id, :dni)', (req, res) => {
 });
 
 // Ruta para eliminar una empresa por ID
-app.delete('/empresas/(:id, :cif)', (req, res) => {
+app.delete('/empresas/:id', (req, res) => {
     const { id } = req.params;
 
     const query = 'DELETE FROM empresas WHERE id_empresa = ?';
@@ -147,16 +147,16 @@ app.delete('/empresas/(:id, :cif)', (req, res) => {
 });
 
 // Ruta para editar un estudiante por ID
-app.put('/estudiantes/:id', (req, res) => {
-    const { id } = req.params;
+app.put('/estudiantes/:combinado', (req, res) => {
+    const [id, extra] = req.params.combinado.split('_');
     const { nombre, apellido, curso, fecha, direccion, email, telefono, vehiculo } = req.body;
     const tieneVehiculo = vehiculo ? 1 : 0;
 
     const query = `
         UPDATE estudiantes 
-        SET nombre = ?, apellido = ?, id_clase = ?, fecha_nacimiento = ?, direccion = ?, email = ?, telefono = ?, tiene_vehiculo = ? 
+        SET nombre = ?, apellido = ?, id_clase = ?, fecha_nacimiento = ?, direccion = ?, email = ?, telefono = ?, tiene_vehiculo = ?
         WHERE id_estudiante = ?
-    `;
+        `;
     const values = [nombre, apellido, curso, fecha, direccion, email, telefono, tieneVehiculo, id];
 
     connection.query(query, values, (err, results) => {
@@ -175,7 +175,7 @@ app.put('/estudiantes/:id', (req, res) => {
 });
 
 // Ruta para editar una empresa por ID
-app.put('/empresas/:id', (req, res) => {
+app.put('/empresas/:id/:c', (req, res) => {
     const { id } = req.params;
     const { cif, nombre, telefono, email, direccion, capacidad } = req.body;
 

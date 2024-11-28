@@ -127,7 +127,7 @@ app.delete('/estudiantes/(:id, :dni)', (req, res) => {
 });
 
 // Ruta para eliminar una empresa por ID
-app.delete('/empresas/:id', (req, res) => {
+app.delete('/empresas/(:id, :cif)', (req, res) => {
     const { id } = req.params;
 
     const query = 'DELETE FROM empresas WHERE id_empresa = ?';

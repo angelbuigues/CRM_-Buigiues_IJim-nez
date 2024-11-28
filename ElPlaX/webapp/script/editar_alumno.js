@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!idEstudiante) {
         alert('No se ha seleccionado un estudiante para editar.');
-        window.location.href = './alumnos.html';
+        window.location.href = './info_alumnos.html';
         return;
     }
 
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 direccion: document.getElementById('direccion').value,
                 email: document.getElementById('email').value,
                 telefono: document.getElementById('telefono').value,
-                tiene_vehiculo: document.getElementById('vehiculo').checked,
+                tiene_vehiculo: document.getElementById('vehiculo').checked //Recuerda que aquí puede ir una coma
             };
 
             fetch(`${apiUrl}/${idEstudiante}`, {

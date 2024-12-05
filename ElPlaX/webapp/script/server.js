@@ -19,6 +19,26 @@ app.get('/estudiantes', (req, res) => {
     });
 });
 
+// Ruta para obtener un estudiante
+app.get('/estudiantes/:id', (req, res) => {
+    const { id } = req.params;
+    const query = 'SELECT * FROM estudiantes WHERE id_estudiante = ?';
+
+    connection.query(query, [id], (err, results) => {
+        if (err) {
+            console.error("Error en la base de datos:", err);
+            return res.status(500).json({ error: 'Error en la base de datos' }); // Respuesta JSON para errores
+        }
+
+        if (results.length === 0) {
+            return res.status(404).json({ error: 'Estudiante no encontrado' }); // Manejo de ID inexistente
+        }
+
+        res.json(results[0]); // Envía el resultado correcto
+    });
+});
+
+
 // Ruta para obtener todos los profesores
 app.get('/profesores', (req, res) => {
     connection.query('SELECT * FROM profesores', (err, results) => {
@@ -147,35 +167,32 @@ app.delete('/empresas/:id', (req, res) => {
 });
 
 // Ruta para editar un estudiante por ID
-app.put('/estudiantes/:combinado', (req, res) => {
-    const [id, extra] = req.params.combinado.split('_');
-    const { nombre, apellido, curso, fecha, direccion, email, telefono, vehiculo } = req.body;
-    const tieneVehiculo = vehiculo ? 1 : 0;
+app.put('/estudiantes/:id', async (req, res) => {
+
+    const { id } = req.params;
+
 
     const query = `
-        UPDATE estudiantes 
-        SET nombre = ?, apellido = ?, id_clase = ?, fecha_nacimiento = ?, direccion = ?, email = ?, telefono = ?, tiene_vehiculo = ?
-        WHERE id_estudiante = ?
+            UPDATE estudiantes 
+            SET nombre = ?, apellido = ?, id_clase = ?, fecha_nacimiento = ?, direccion = ?, email = ?, telefono = ?, tiene_vehiculo = ?
+            WHERE id_estudiante = ?
         `;
-    const values = [nombre, apellido, curso, fecha, direccion, email, telefono, tieneVehiculo, id];
-
+    const { nombre, apellido, curso, fecha, direccion, email, telefono, vehiculo } = req.body;
+    const values = [nombre, apellido, curso, fecha, direccion, email, telefono, vehiculo, id];
+    console.log("Estudiante editado:", values);
     connection.query(query, values, (err, results) => {
         if (err) {
-            console.error("Error en la base de datos:", err);
-            res.status(500).send('Error en la base de datos');
-            return;
+            throw err;
         }
-
-        if (results.affectedRows === 0) {
-            res.status(404).send('Estudiante no encontrado');
-        } else {
-            res.status(200).send('Estudiante actualizado con éxito');
-        }
+        res.status(200).send('Estudiante actualizado con éxito');
     });
+
 });
 
+
+
 // Ruta para editar una empresa por ID
-app.put('/empresas/:id/:c', (req, res) => {
+app.put('/empresas/:id', (req, res) => {
     const { id } = req.params;
     const { cif, nombre, telefono, email, direccion, capacidad } = req.body;
 

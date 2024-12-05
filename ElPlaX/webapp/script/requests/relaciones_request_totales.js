@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     telefonoCell.textContent = estudiante.telefono;
 
                     const vehiculoCell = document.createElement('td');
-                    vehiculoCell.textContent = estudiante.tiene_vehiculo ? '🚗' : '❌';
+                    vehiculoCell.textContent = estudiante.tiene_vehiculo ? '✅' : '❌';
 
                     // Añadir las celdas a la fila
                     tableRow.appendChild(dniCell);

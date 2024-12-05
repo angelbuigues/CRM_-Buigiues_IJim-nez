@@ -37,6 +37,23 @@ app.get('/estudiantes/:id', (req, res) => {
         res.json(results[0]); // Envía el resultado correcto
     });
 });
+app.get('/empresas/:id', (req, res) => {
+    const { id } = req.params;
+    const query = 'SELECT * FROM empresas WHERE id_empresa = ?';
+
+    connection.query(query, [id], (err, results) => {
+        if (err) {
+            console.error("Error en la base de datos:", err);
+            return res.status(500).json({ error: 'Error en la base de datos' }); // Respuesta JSON para errores
+        }
+
+        if (results.length === 0) {
+            return res.status(404).json({ error: 'Estudiante no encontrado' }); // Manejo de ID inexistente
+        }
+
+        res.json(results[0]); // Envía el resultado correcto
+    });
+});
 
 
 // Ruta para obtener todos los profesores
@@ -216,13 +233,14 @@ app.put('/estudiantes/:id', async (req, res) => {
 // Ruta para editar una empresa por ID
 app.put('/empresas/:id', (req, res) => {
     const { id } = req.params;
-    const { cif, nombre, telefono, email, direccion, capacidad } = req.body;
+    
 
     const query = `
         UPDATE empresas 
         SET CIF = ?, nombre_empresa = ?, telefono = ?, email = ?, direccion = ?, capacidad = ? 
         WHERE id_empresa = ?
     `;
+    const { cif, nombre, telefono, email, direccion, capacidad } = req.body;
     const values = [cif, nombre, telefono, email, direccion, capacidad, id];
 
     connection.query(query, values, (err, results) => {

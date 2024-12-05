@@ -76,6 +76,7 @@ assignForm.addEventListener('submit', (e) => {
     .then(data => {
       console.log(data);
       alert('Asignación agregada con éxito');
+      window.location.href = './relaciones.html';
     })
     .catch(err => console.error('Error al agregar asignación:', err));
 });

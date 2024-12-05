@@ -68,6 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
 
+                editarButton.classList.add('edit-button');
+                eliminarButton.classList.add('delete-button');
+
                 modificarCell.appendChild(editarButton);
                 modificarCell.appendChild(eliminarButton);
 
@@ -87,4 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         })
         .catch(err => console.error('Error al obtener datos:', err));
+
+    
+    document.getElementById('volver').addEventListener('click', () => {
+        window.history.back();
+    });
 });

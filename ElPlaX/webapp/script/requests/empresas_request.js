@@ -41,4 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         })
         .catch(err => console.error('Error al cargar los datos:', err));
+
+    document.getElementById('volver').addEventListener('click', () => {
+        window.history.back();
+    });
 });

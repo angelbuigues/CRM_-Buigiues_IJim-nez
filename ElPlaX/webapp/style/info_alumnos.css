@@ -141,3 +141,53 @@ h1 {
         padding: 8px;
     }
 }
+
+.edit-button {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: lightcoral;
+    color: black;
+    padding: 5px 5px;
+    border-radius: 8px;
+    border: solid 2px rgb(73, 73, 73);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.edit-button:hover {
+    background-color: rgb(220, 100, 100);
+}
+
+.delete-button {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: lightcoral;
+    color: black;
+    padding: 5px 5px;
+    border-radius: 8px;
+    border: solid 2px rgb(73, 73, 73);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.delete-button:hover {
+    background-color: rgb(220, 100, 100);
+}
+
+.back-button {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: lightcoral;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: solid 2px rgb(73, 73, 73);
+    margin-top: 50px;
+}
+
+.back-button:hover {
+    background-color: rgb(220, 100, 100);
+}

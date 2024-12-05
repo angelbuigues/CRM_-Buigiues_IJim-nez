@@ -126,6 +126,28 @@ app.post('/insertarEmpresas', (req, res) => {
     });
 });
 
+// Ruta para insertar una empresa
+app.post('/insertarAsignaciones', (req, res) => {
+
+    console.log(req.body);
+    const { id_estudiante, id_empresa, fecha_asignacion } = req.body;
+
+    const query = `
+        INSERT INTO asignaciones (id_estudiante, id_empresa, fecha_asignacion) 
+        VALUES (?, ?, ?)
+    `;
+    const values = [id_estudiante, id_empresa, fecha_asignacion];
+
+    connection.query(query, values, (err, results) => {
+        if (err) {
+            console.error("Error en la base de datos:", err);
+            res.status(500).send('Error en la base de datos');
+            return;
+        }
+        res.status(200).send(JSON.stringify({mensaje: 'Asignación realizada con éxito'}));
+    });
+});
+
 // Ruta para eliminar un estudiante por ID
 app.delete('/estudiantes/:id', (req, res) => {
     const { id } = req.params;

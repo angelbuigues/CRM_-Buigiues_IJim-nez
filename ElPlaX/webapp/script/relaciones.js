@@ -24,34 +24,6 @@ fetch('http://localhost:3000/empresas')
   });
 
 // Agregar evento de envío al formulario
-// document.getElementById('assign-form').addEventListener('submit', (e) => {
-//   e.preventDefault();
-
-//   const studentId = document.getElementById('student-select').value;
-//   const companyId = document.getElementById('company-select').value;
-//   const startDate = document.getElementById('start-date').value;
-
-//   // Enviar solicitud al servidor para agregar la asignación
-//   fetch('http://localhost:3000/asignaciones', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify({
-//       id_estudiante: studentId,
-//       id_empresa: companyId,
-//       fecha_asignacion: startDate,
-//     }),
-//   })
-//     .then(response => response.json())
-//     .then(data => {
-//       console.log(data);
-//       alert('Asignación agregada con éxito');
-//     })
-//     .catch(err => console.error('Error al agregar asignación:', err));
-// });
-
-// Agregar evento de envío al formulario
 const assignForm = document.getElementById('assign-form');
 assignForm.addEventListener('submit', (e) => {
   e.preventDefault();

@@ -36,6 +36,40 @@ document.addEventListener("DOMContentLoaded", () => {
                 capacidadCell.textContent = empresa.capacidad;
                 tableRow.appendChild(capacidadCell);
 
+                ////
+                const modificarCell = document.createElement('td');
+
+                // Botón "Editar"
+                const editarButton = document.createElement('button');
+                editarButton.textContent = '📝';
+                editarButton.addEventListener('click', () => {
+                    localStorage.setItem('idEmpresa', empresa.id_empresa);
+                    window.location.href = './edit_info_empresa.html';
+                });
+
+                // Botón "Eliminar"
+                const eliminarButton = document.createElement('button');
+                eliminarButton.textContent = '🗑️';
+                eliminarButton.addEventListener('click', () => {
+                    if (confirm(`¿Seguro que deseas eliminar a ${empresa.nombre_empresa}?`)) {
+                        fetch(`${apiUrl}/${empresa.id_empresa}`, {
+                            method: 'DELETE',
+                        })
+                            .then(() => {
+                                alert('Empresa eliminado con éxito.');
+                                window.location.reload(); // Recargar la tabla
+                            })
+                            .catch(err => console.error('Error al eliminar estudiante:', err));
+                    }
+                });
+
+                editarButton.classList.add('edit-button');
+                eliminarButton.classList.add('delete-button');
+                modificarCell.appendChild(editarButton);
+                modificarCell.appendChild(eliminarButton);
+                tableRow.appendChild(modificarCell);
+
+                ////
                 // Añadir la fila completa al tbody
                 tableBody.appendChild(tableRow);
             });

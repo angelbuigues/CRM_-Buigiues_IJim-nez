@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(empresa => {
             document.getElementById('cif').value = empresa.cif;
             document.getElementById('cif').disabled = true; // No se puede editar el CIF
-            document.getElementById('nombre').value = empresa.nombre;
+            document.getElementById('nombre').value = empresa.nombre_empresa;
             document.getElementById('telefono').value = empresa.telefono;
             document.getElementById('email').value = empresa.email;
             document.getElementById('direccion').value = empresa.direccion;
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
                 .then(() => {
                     alert('Empresa actualizada con éxito.');
-                    window.location.href = './empresas.html';
+                    window.location.href = './info_empresas.html';
                 })
                 .catch(err => console.error('Error al actualizar empresa:', err));
         }

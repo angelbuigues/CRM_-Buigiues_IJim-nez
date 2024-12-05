@@ -113,6 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(err => console.error('Error al cargar los datos:', err));
     
     document.getElementById('volver').addEventListener('click', () => {
-        window.location.href = './info_relaciones.html';
+        window.history.back();
     });
 });

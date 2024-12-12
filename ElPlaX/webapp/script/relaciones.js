@@ -1,27 +1,30 @@
 // Obtener los datos de los alumnos y empresas desde el servidor
-fetch('http://localhost:3000/estudiantes')
-  .then(response => response.json())
-  .then(data => {
-    const studentSelect = document.getElementById('student-select');
-    data.forEach(estudiante => {
-      const option = document.createElement('option');
-      option.value = estudiante.id_estudiante;
-      option.textContent = `${estudiante.nombre} ${estudiante.apellido}`;
-      studentSelect.appendChild(option);
-    });
-  });
+// document.addEventListener("DOMContentLoaded", function () {
+//   fetch('http://localhost:3000/estudiantes')
+//     .then(response => response.json())
+//     .then(data => {
+//       const studentList = document.getElementById('student-list');
+//       data.forEach(estudiante => {
+//         const option = document.createElement('option');
+//         option.value = `${estudiante.nombre} ${estudiante.apellido}`;
+//         studentList.appendChild(option);
+//       });
+//     })
+//     .catch(err => console.error('Error al obtener estudiantes:', err));
+// });
 
-fetch('http://localhost:3000/empresas')
-  .then(response => response.json())
-  .then(data => {
-    const companySelect = document.getElementById('company-select');
-    data.forEach(empresa => {
-      const option = document.createElement('option');
-      option.value = empresa.id_empresa;
-      option.textContent = empresa.nombre_empresa;
-      companySelect.appendChild(option);
-    });
-  });
+
+// fetch('http://localhost:3000/empresas')
+//   .then(response => response.json())
+//   .then(data => {
+//     const companySelect = document.getElementById('company-select');
+//     data.forEach(empresa => {
+//       const option = document.createElement('option');
+//       option.value = empresa.id_empresa;
+//       option.textContent = empresa.nombre_empresa;
+//       companySelect.appendChild(option);
+//     });
+//   });
 
 // Agregar evento de envío al formulario
 // document.getElementById('assign-form').addEventListener('submit', (e) => {
@@ -56,8 +59,28 @@ const assignForm = document.getElementById('assign-form');
 assignForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const studentId = document.getElementById('student-select').value;
-  const companyId = document.getElementById('company-select').value;
+  const studentName = document.getElementById('student-select').value;
+
+  // Buscar el ID del alumno en la base de datos
+  fetch('http://localhost:3000/estudiantes')
+    .then(response => response.json())
+    .then(data => {
+      const studentId = data.find(estudiante => estudiante.nombre === studentName).id_estudiante;
+      console.log('ID del alumno:', studentId);
+    })
+    .catch(err => console.error('Error al obtener estudiantes:', err));
+
+  const companyName = document.getElementById('company-select').value;
+
+  // Buscar el ID de la empresa en la base de datos
+  fetch('http://localhost:3000/empresas')
+    .then(response => response.json())
+    .then(data => {
+      const companyId = data.find(empresa => empresa.nombre_empresa === companyName).id_empresa;
+      console.log('ID de la empresa:', companyId);
+    })
+    .catch(err => console.error('Error al obtener empresas:', err));
+
   const startDate = document.getElementById('start-date').value;
 
   // Enviar solicitud al servidor para agregar la asignación

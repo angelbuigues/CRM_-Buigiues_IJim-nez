@@ -26,16 +26,43 @@
         <section id="assign-form-container">
             <form id="assign-form">
                 <label for="student-select">Seleccionar Alumno:</label>
-                <select id="student-select" name="student">
-                    <option value="" disabled selected>--Selecciona un alumno--</option>
-                    <!-- Opciones dinámicas -->
-                </select>
+                <input type="text" name="student" id="student-select" list="student-list" placeholder="--Selecciona un alumno--">
+                <datalist id="student-list">
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            fetch('http://localhost:3000/estudiantes')
+                                .then(response => response.json())
+                                .then(data => {
+                                    const studentList = document.getElementById('student-list');
+                                    data.forEach(estudiante => {
+                                        const option = document.createElement('option');
+                                        option.value = `${estudiante.nombre} ${estudiante.apellido}`;
+                                        studentList.appendChild(option);
+                                    });
+                                })
+                                .catch(err => console.error('Error al obtener estudiantes:', err));
+                        });
+                    </script>
+                </datalist>
 
                 <label for="company-select">Seleccionar Empresa:</label>
-                <select id="company-select" name="company">
-                    <option value="" disabled selected>--Selecciona una empresa--</option>
-                    <!-- Opciones dinámicas -->
-                </select>
+                <input type="text" name="company" id="company-select" list="company-list" placeholder="--Selecciona una empresa--">
+                <datalist id="company-list">
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            fetch('http://localhost:3000/empresas')
+                                .then(response => response.json())
+                                .then(data => {
+                                    const companyList = document.getElementById('company-list');
+                                    data.forEach(empresa => {
+                                        const option = document.createElement('option');
+                                        option.value = empresa.nombre_empresa;
+                                        companyList.appendChild(option);
+                                    });
+                                });
+                        });
+                    </script>
+                </datalist>
 
                 <label for="start-date">Fecha de inicio:</label>
                 <input type="text" id="start-date" name="starting_date" placeholder="YYYY/MM/DD" required>

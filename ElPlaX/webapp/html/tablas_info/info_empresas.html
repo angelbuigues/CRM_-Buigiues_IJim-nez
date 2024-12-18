@@ -22,6 +22,14 @@
 
     <main>
         <h1>Datos de las empresas</h1>
+
+        <!-- Filtro de datos -->
+        <div id="filter-container">
+            <label for="filter-input">Filtrar por nombre:</label>
+            <input type="text" id="filter-input" placeholder="Nombre de la empresa">
+            <button id="filter-button">Filtrar</button>
+        </div>
+
         <!-- Tabla dinámica -->
         <section>
             <table id="data-table">
@@ -31,7 +39,7 @@
                         <th>Nombre</th>
                         <th>Teléfono</th>
                         <th>Email</th>
-                        <th>Ubicacion</th>
+                        <th>Ubicación</th>
                         <th>Capacidad</th>
                         <th>Modificar</th>
                     </tr>

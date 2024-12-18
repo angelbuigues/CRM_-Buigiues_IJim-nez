@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creación de Empresas</title>
     <link rel="stylesheet" href="../../style/empresas.css">
-    <script defer src="../../script/editar_empresa.js"></script>
+    <script defer src="../../script/registro_empresa.js"></script>
 </head>
 
 <body>
@@ -22,7 +22,11 @@
     <div class="logoff-container">
         <a href="../../index.html" class="logoff-button">Cerrar Sesión</a>
     </div>
-
+    <!-- llamada_registrada BOOLEAN NOT NULL,
+    correo_registrado BOOLEAN NOT NULL,
+    reunion_registrada BOOLEAN NOT NULL,
+    observacion VARCHAR(255),
+    fecha_asignacion DATE DEFAULT CURRENT_DATE, -->
     <main>
         <h2>Formulario de Edición de Empresas</h2>
         <form action="/server" method="POST">

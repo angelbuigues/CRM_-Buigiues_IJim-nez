@@ -63,6 +63,7 @@ function nextPassword() {
             document.getElementById('user').value = '';
             document.getElementById('password').value = '';
             comprovador = true;
+            localStorage.setItem('idProfesor', listItem[i].id_profesor);
             window.location.href = "./html/home.html";
             break;
         }

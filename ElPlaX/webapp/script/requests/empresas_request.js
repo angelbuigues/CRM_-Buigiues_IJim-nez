@@ -63,10 +63,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
 
+                // Botón "Registro"
+                const registroButton = document.createElement('button');
+                registroButton.textContent = '📋';
+                registroButton.addEventListener('click', () => {
+                    localStorage.setItem('idEmpresa', empresa.id_empresa);
+                    window.location.href = './registro_info_empresa.html';
+                });
+
+                registroButton.classList.add('registro-button');
                 editarButton.classList.add('edit-button');
                 eliminarButton.classList.add('delete-button');
                 modificarCell.appendChild(editarButton);
                 modificarCell.appendChild(eliminarButton);
+                modificarCell.appendChild(registroButton);
                 tableRow.appendChild(modificarCell);
 
                 ////

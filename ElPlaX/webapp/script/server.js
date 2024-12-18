@@ -68,6 +68,18 @@ app.get('/profesores', (req, res) => {
     });
 });
 
+// Ruta para obtener todos los registros
+app.get('/registros', (req, res) => {
+    connection.query('SELECT * FROM registros', (err, results) => {
+        if (err) {
+            res.status(500).send('Error en la base de datos');
+            return;
+        }
+        res.json(results);
+
+    });
+});
+
 // Ruta para obtener todas las empresas
 app.get('/empresas', (req, res) => {
     connection.query('SELECT * FROM empresas', (err, results) => {
@@ -140,6 +152,26 @@ app.post('/insertarEmpresas', (req, res) => {
             return;
         }
         res.status(200).send('Empresa añadida con éxito');
+    });
+});
+
+//Ruta para insertar un registroEmpresa
+app.post('/insertarRegistros', (req, res) => {
+    const { llamada_registrada, correo_registrado, reunion_registrada,	observacion, fecha_asignacion, id_empresa, id_profesor } = req.body;
+
+    const query = `
+        INSERT INTO registros (llamada_registrada, correo_registrado, reunion_registrada, observacion, fecha_asignacion, id_empresa, id_profesor) 
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    `;
+    const values = [llamada_registrada, correo_registrado, reunion_registrada, observacion, fecha_asignacion, id_empresa, id_profesor];
+
+    connection.query(query, values, (err, results) => {
+        if (err) {
+            console.error("Error en la base de datos:", err);
+            res.status(500).send('Error en la base de datos');
+            return;
+        }
+        res.status(200).send('Registro realizado con éxito');
     });
 });
 

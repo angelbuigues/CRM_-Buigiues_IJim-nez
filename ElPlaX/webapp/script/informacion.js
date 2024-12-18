@@ -11,5 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("inf-relaciones").addEventListener("click", function() {
         window.location.href = "tablas_info/info_relaciones.html";
     });
+
+    document.getElementById("inf-registros").addEventListener("click", function() {
+        window.location.href = "tablas_info/info_registros.html";
+    });
       
 })

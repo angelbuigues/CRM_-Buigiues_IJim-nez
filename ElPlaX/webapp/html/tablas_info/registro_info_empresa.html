@@ -22,28 +22,26 @@
     <div class="logoff-container">
         <a href="../../index.html" class="logoff-button">Cerrar Sesión</a>
     </div>
-    <!-- llamada_registrada BOOLEAN NOT NULL,
-    correo_registrado BOOLEAN NOT NULL,
-    reunion_registrada BOOLEAN NOT NULL,
-    observacion VARCHAR(255),
-    fecha_asignacion DATE DEFAULT CURRENT_DATE, -->
     <main>
         <h2>Formulario de Edición de Empresas</h2>
         <form action="/server" method="POST">
-            <label for="nombre">Nombre de la empresa:</label>
-            <input type="text" id="nombre" name="nombre" required>
 
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" required>
+            <label for="observacion">Escribe alguna observacion:</label>
+            <input type="text" id="observacion" name="observacion" required>
 
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="fecha_asignacion">Fecha de Registro:</label>
+            <input type="text" id="fecha_asignacion" name="fecha_asignacion" placeholder="YYYY/MM/DD" required>
 
-            <label for="direccion">Ubicación del centro de trabajo:</label>
-            <input type="text" id="direccion" name="direccion" required>
+            <div class="checkbox-container">
+                <label for="llamada_registrada">Llamada telefonica:</label>
+                <input type="checkbox" id="llamada_registrada" name="llamada_registrada">
 
-            <label for="capacidad">Capacidad de Alumnos:</label>
-            <input type="text" id="capacidad" name="capacidad" required>
+                <label for="correo_registrado">Correo Electronico:</label>
+                <input type="checkbox" id="correo_registrado" name="correo_registrado">
+
+                <label for="reunion_registrada">Reunion:</label>
+                <input type="checkbox" id="reunion_registrada" name="reunion_registrada">
+            </div>
 
             <button type="submit" id="enviarButton">Enviar</button>
         </form>

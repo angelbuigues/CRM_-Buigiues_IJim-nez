@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(`${apiUrl}/${idEmpresa}`)
         .then(response => response.json())
         .then(empresa => {
-            document.getElementById('cif').value = empresa.cif;
+            document.getElementById('cif').value = empresa.CIF;
             document.getElementById('cif').disabled = true; // No se puede editar el CIF
             document.getElementById('nombre').value = empresa.nombre_empresa;
             document.getElementById('telefono').value = empresa.telefono;

@@ -9,22 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 const tableBody = document.querySelector('#data-table tbody');
                 tableBody.innerHTML = ''; // Limpiar la tabla antes de agregar nuevos datos
 
-                tableRow.addEventListener('click', () => {
-                    // Guardar los IDs del estudiante y la empresa en el localStorage
-                    localStorage.setItem('idEmpresa', empresa.id_empresa);
-
-                    // Redirigir a la nueva ventana
-                    window.location.href = './info_empresa_totales.html';
-                });
-                // Crear y añadir las celdas a la fila
-                const cifCell = document.createElement('td');
-                cifCell.textContent = empresa.CIF;
-                tableRow.appendChild(cifCell);
+                // Filtrar las empresas por nombre
+                const filteredData = data.filter(empresa =>
+                    empresa.nombre_empresa.toLowerCase().includes(filter.toLowerCase())
+                );
 
                 // Mostrar las empresas filtradas
                 filteredData.forEach(empresa => {
                     const tableRow = document.createElement('tr');
 
+                    
                     // Crear y añadir las celdas a la fila
                     const cifCell = document.createElement('td');
                     cifCell.textContent = empresa.CIF;
@@ -60,6 +54,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         window.location.href = './edit_info_empresa.html';
                     });
 
+                    // Botón "Info"
+                    const infoButton = document.createElement('button');
+                    infoButton.textContent = 'ℹ️';
+                    infoButton.addEventListener('click', () => {
+                        localStorage.setItem('idEmpresa', empresa.id_empresa);
+    
+                        // Redirigir a la nueva ventana
+                        window.location.href = './info_empresa_totales.html';
+                    });
+
                     // Botón "Eliminar"
                     const eliminarButton = document.createElement('button');
                     eliminarButton.textContent = '🗑️';
@@ -84,9 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         window.location.href = './registro_info_empresa.html';
                     });
 
+                    infoButton.classList.add('edit-button');
                     registroButton.classList.add('registro-button');
                     editarButton.classList.add('edit-button');
                     eliminarButton.classList.add('delete-button');
+                    modificarCell.appendChild(infoButton);
                     modificarCell.appendChild(editarButton);
                     modificarCell.appendChild(eliminarButton);
                     modificarCell.appendChild(registroButton);

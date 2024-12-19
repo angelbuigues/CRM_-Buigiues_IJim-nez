@@ -9,10 +9,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 const tableBody = document.querySelector('#data-table tbody');
                 tableBody.innerHTML = ''; // Limpiar la tabla antes de agregar nuevos datos
 
-                // Filtrar las empresas por nombre
-                const filteredData = data.filter(empresa =>
-                    empresa.nombre_empresa.toLowerCase().includes(filter.toLowerCase())
-                );
+                tableRow.addEventListener('click', () => {
+                    // Guardar los IDs del estudiante y la empresa en el localStorage
+                    localStorage.setItem('idEmpresa', empresa.id_empresa);
+
+                    // Redirigir a la nueva ventana
+                    window.location.href = './info_empresa_totales.html';
+                });
+                // Crear y añadir las celdas a la fila
+                const cifCell = document.createElement('td');
+                cifCell.textContent = empresa.CIF;
+                tableRow.appendChild(cifCell);
 
                 // Mostrar las empresas filtradas
                 filteredData.forEach(empresa => {

@@ -158,12 +158,15 @@ app.post('/insertarEmpresas', (req, res) => {
 //Ruta para insertar un registroEmpresa
 app.post('/insertarRegistros', (req, res) => {
     const { llamada_registrada, correo_registrado, reunion_registrada,	observacion, fecha_asignacion, id_empresa, id_profesor } = req.body;
-
+    const llamada = llamada_registrada ? 1 : 0; // Convertimos el boolean a un valor 1 o 0
+    const correo = correo_registrado ? 1 : 0; // Convertimos el boolean a un valor 1 o 0
+    const reunion = reunion_registrada ? 1 : 0; // Convertimos el boolean a un valor 1 o 0
+    console.log(llamada, correo, reunion);
     const query = `
         INSERT INTO registros (llamada_registrada, correo_registrado, reunion_registrada, observacion, fecha_asignacion, id_empresa, id_profesor) 
         VALUES (?, ?, ?, ?, ?, ?, ?)
     `;
-    const values = [llamada_registrada, correo_registrado, reunion_registrada, observacion, fecha_asignacion, id_empresa, id_profesor];
+    const values = [llamada, correo, reunion, observacion, fecha_asignacion, id_empresa, id_profesor];
 
     connection.query(query, values, (err, results) => {
         if (err) {

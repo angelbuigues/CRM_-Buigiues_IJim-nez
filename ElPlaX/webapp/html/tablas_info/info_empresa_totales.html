@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de la Base de Datos</title>
+    <script defer src="../../script/requests/empresas_request_totales.js"></script>
+    <link rel="stylesheet" href="../../style/info_alumnos.css">
+</head>
+<body>
+    <aside>
+        <a href="../home.html" id="home-link">Home</a>
+        <a href="../alumnos.html" id="alumn-link">Creación de Alumnos</a>
+        <a href="../empresas.html" id="client-link">Creación de Empresas</a>
+        <a href="../relaciones.html" id="relation-link">Crear Asignaciones</a>
+        <a href="../informacion.html" id="information-link">Consultar Base de Datos</a>
+    </aside>
+
+    <div class="logoff-container">
+        <a href="../../index.html" class="logoff-button">Cerrar Sesión</a>
+    </div>
+
+    <main>
+        <h1>Alumnos y registros asignados a la empresa</h1>
+        <!-- Tabla dinámica -->
+        <section>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>DNI</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Curso</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Dirección</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Vehículo</th>
+                    </tr>
+                </thead>
+                <tbody id="alumnos-tbody">
+                    <!-- Filas dinámicas generadas aquí -->
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Profesor</th>
+                        <th>Empresa</th>
+                        <th>Fecha Registro</th>
+                        <th>Observacion</th>
+                        <th>Reunion Registrada</th>
+                        <th>Correo Registrado</th>
+                        <th>Llamada Registrada</th>
+                    </tr>
+                </thead>
+                <tbody id="registros-tbody">
+                    <!-- Filas dinámicas generadas aquí -->
+                </tbody>
+            </table>
+        </section>
+        <button id="volver" class="back-button">Volver</button>
+    </main>
+</body>
+</html>

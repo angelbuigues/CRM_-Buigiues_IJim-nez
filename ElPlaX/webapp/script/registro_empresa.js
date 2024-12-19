@@ -1,15 +1,18 @@
 function enviarRegistro(event) {
     event.preventDefault(); // Evita el comportamiento de envío por defecto del formulario
-    const llamada_registrada = document.getElementById("llamada_registrada").value;
-    const correo_registrado = document.getElementById("correo_registrado").value;
-    const reunion_registrada = document.getElementById("reunion_registrada").value;
+
+    const llamada_registrada = document.getElementById("llamada").checked;
+    const correo_registrado = document.getElementById("correo").checked;
+    const reunion_registrada = document.getElementById("reunion").checked;
     const observacion = document.getElementById("observacion").value;
     const fecha_asignacion = document.getElementById("fecha_asignacion").value;
     const id_empresa = localStorage.getItem('idEmpresa');
     const id_profesor = localStorage.getItem('idProfesor');
 
+
     fetch('http://localhost:3000/insertarRegistros', {
         method: 'POST',
+        
         headers: {
             'Content-Type': 'application/json'
         },

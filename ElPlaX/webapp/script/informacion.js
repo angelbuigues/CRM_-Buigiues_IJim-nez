@@ -16,4 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = "tablas_info/info_registros.html";
     });
       
+    const infoButton = document.getElementById("info-button");
+    const popup = document.getElementById("info-popup");
+
+    // Mostrar la ventana emergente
+    infoButton.addEventListener("click", () => {
+        popup.classList.toggle("hidden");
+    });
+
 })

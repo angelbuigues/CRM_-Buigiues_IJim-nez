@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creación de Empresas</title>
-    <link rel="stylesheet" href="../../style/empresas.css">
+    <link rel="stylesheet" href="../../style/registros.css">
     <script defer src="../../script/registro_empresa.js"></script>
 </head>
 
@@ -23,10 +23,10 @@
         <a href="../../index.html" class="logoff-button">Cerrar Sesión</a>
     </div>
     <main>
-        <h2>Formulario de Edición de Empresas</h2>
+        <h2>Formulario de Registros</h2>
         <form action="/server" method="POST">
 
-            <label for="observacion">Escribe alguna observacion:</label>
+            <label for="observacion">Observaciones:</label>
             <input type="text" id="observacion" name="observacion" required>
 
             <label for="fecha_asignacion">Fecha de Registro:</label>
@@ -35,7 +35,7 @@
             <div class="checkbox-container">
                 <label for="llamada_registrada">Llamada telefonica:</label>
                 <input type="checkbox" id="llamada_registrada" name="llamada_registrada">
-
+                
                 <label for="correo_registrado">Correo Electronico:</label>
                 <input type="checkbox" id="correo_registrado" name="correo_registrado">
 

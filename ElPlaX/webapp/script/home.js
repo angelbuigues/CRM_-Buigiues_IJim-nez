@@ -15,5 +15,5 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("information-button").addEventListener("click", function() {
         window.location.href = "./informacion.html";
     });
-      
-})
+     
+});

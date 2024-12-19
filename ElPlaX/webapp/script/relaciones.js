@@ -66,3 +66,11 @@ assignForm.addEventListener('submit', async (e) => {
     alert('Hubo un error al agregar la asignación. Por favor, inténtalo de nuevo.');
   }
 });
+
+const infoButton = document.getElementById("info-button");
+const popup = document.getElementById("info-popup");
+
+// Mostrar la ventana emergente
+infoButton.addEventListener("click", () => {
+    popup.classList.toggle("hidden");
+});

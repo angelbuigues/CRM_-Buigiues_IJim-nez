@@ -118,3 +118,56 @@ button[type="submit"] {
     cursor: pointer;
     align-self: center;
 }
+
+/* Botón flotante */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: lightcoral;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.floating-button:hover {
+    background-color: rgb(220, 100, 100);
+}
+
+/* Ventana emergente */
+.info-popup {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: antiquewhite;
+    border: 2px solid rgb(73, 73, 73);
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 15px;
+}
+
+.info-popup.hidden {
+    display: none;
+}
+
+.popup-content h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: rgb(63, 63, 63);
+}
+
+.popup-content p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: rgb(63, 63, 63);
+}

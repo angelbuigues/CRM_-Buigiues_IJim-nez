@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    color: rgb(63, 63, 63);
+}
+
+h2 {
+    font-size: 24px;
+    color: rgb(63, 63, 63);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para el menú lateral */
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 0;
+    border-right: 2px solid rgb(73, 73, 73);
+}
+
+aside a {
+    color: black;
+    text-decoration: none;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+}
+
+aside a:hover {
+    background-color: rgb(220, 100, 100);
+}
+
+/* Contenedor del botón de Log Off */
+.logoff-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.logoff-button {
+    background-color: lightcoral;
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: solid 2px rgb(73, 73, 73);
+    transition: background-color 0.3s;
+}
+
+.logoff-button:hover {
+    background-color: rgb(220, 100, 100);
+}
+
+/* Contenedor principal */
+main {
+    margin-left: 220px;
+    padding: 20px;
+    width: calc(100% - 220px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo para el formulario */
+form {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    border: 2px solid rgb(73, 73, 73);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: rgb(63, 63, 63);
+}
+
+/* Estilo para los inputs de texto */
+input[type="text"],
+input[type="date"] {
+    padding: 10px;
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+    border-color: lightcoral;
+    outline: none;
+}
+
+/* Estilo para los checkboxes */
+.checkbox-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-container label {
+    font-weight: normal;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+}
+
+/* Estilo para el botón de enviar */
+button[type="submit"] {
+    background-color: lightcoral;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(220, 100, 100);
+}

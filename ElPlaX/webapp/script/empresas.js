@@ -38,3 +38,11 @@ function enviarEmpresas(event) {
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("enviarButton").addEventListener("click", enviarEmpresas);
 });
+
+const infoButton = document.getElementById("info-button");
+const popup = document.getElementById("info-popup");
+
+// Mostrar la ventana emergente
+infoButton.addEventListener("click", () => {
+    popup.classList.toggle("hidden");
+});

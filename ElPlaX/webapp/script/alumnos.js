@@ -44,3 +44,11 @@ function enviarEstudiantes(event) {
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("enviarEstudianteButton").addEventListener("click", enviarEstudiantes);
 });
+
+const infoButton = document.getElementById("info-button");
+const popup = document.getElementById("info-popup");
+
+// Mostrar la ventana emergente
+infoButton.addEventListener("click", () => {
+    popup.classList.toggle("hidden");
+});

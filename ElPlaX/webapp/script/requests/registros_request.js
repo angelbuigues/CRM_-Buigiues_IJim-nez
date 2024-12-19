@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const correo_registradoCell = document.createElement('td');
                 correo_registradoCell.textContent = registro.correo_registrado;
                 tableRow.appendChild(correo_registradoCell);
-/////////////////
+                
                 const telefonoCell = document.createElement('td');
                 telefonoCell.textContent = empresa.telefono;
                 tableRow.appendChild(telefonoCell);
@@ -44,5 +44,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById('volver').addEventListener('click', () => {
         window.history.back();
+    });
+
+    const infoButton = document.getElementById("info-button");
+    const popup = document.getElementById("info-popup");
+
+    // Mostrar la ventana emergente
+    infoButton.addEventListener("click", () => {
+        popup.classList.toggle("hidden");
     });
 });
